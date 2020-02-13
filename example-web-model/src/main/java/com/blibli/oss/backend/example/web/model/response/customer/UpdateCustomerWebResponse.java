@@ -1,21 +1,17 @@
-package com.blibli.oss.backend.example.entity;
+package com.blibli.oss.backend.example.web.model.response.customer;
 
 import com.blibli.oss.backend.example.enums.Gender;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.*;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Document("customers")
-public class Customer {
+public class UpdateCustomerWebResponse {
 
-  @Id
   private String id;
 
   private Gender gender;
@@ -26,18 +22,11 @@ public class Customer {
 
   private String email;
 
-  @Version
-  private Long version;
-
-  @LastModifiedDate
   private Long lastModifiedDate;
 
-  @LastModifiedBy
   private String lastModifiedBy;
 
-  @CreatedDate
   private Long createdDate;
 
-  @CreatedBy
   private String createdBy;
 }

@@ -1,0 +1,1 @@
+package com.blibli.oss.backend.command.model;

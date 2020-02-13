@@ -23,6 +23,11 @@
       <artifactId>example-constant</artifactId>
       <version>${project.version}</version>
     </dependency>
+    <dependency>
+      <groupId>com.blibli.oss.backend.example</groupId>
+      <artifactId>example-validation</artifactId>
+      <version>${project.version}</version>
+    </dependency>
 
     <dependency>
       <groupId>org.projectlombok</groupId>
