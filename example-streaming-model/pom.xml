@@ -24,6 +24,12 @@
       <version>${project.version}</version>
     </dependency>
 
+    <!--  BLIBLI BACKEND FRAMEWORK  -->
+    <dependency>
+      <groupId>com.blibli.oss</groupId>
+      <artifactId>blibli-backend-framework-kafka</artifactId>
+    </dependency>
+
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>

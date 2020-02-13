@@ -24,6 +24,10 @@
       <groupId>com.blibli.oss</groupId>
       <artifactId>blibli-backend-framework-command</artifactId>
     </dependency>
+    <dependency>
+      <groupId>com.blibli.oss</groupId>
+      <artifactId>blibli-backend-framework-reactor</artifactId>
+    </dependency>
   </dependencies>
 
 </project>
