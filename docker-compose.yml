@@ -1,0 +1,89 @@
+version: '3.5'
+
+services:
+
+  mongo:
+    container_name: mongo
+    image: mongo:4-xenial
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongo
+      MONGO_INITDB_ROOT_PASSWORD: mongo
+    networks:
+      - development
+
+  redis:
+    container_name: redis
+    image: redis:5
+    ports:
+      - 6379:6379
+    networks:
+      - development
+
+  elasticsearch:
+    container_name: elasticsearch
+    image: elasticsearch:7.0.0
+    ports:
+      - 9200:9200
+    networks:
+      - development
+
+  postgres:
+    container_name: postgres
+    image: postgres:11-alpine
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    networks:
+      - development
+
+  mariadb:
+    container_name: mariadb
+    image: mariadb:10
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: mariadb
+      MYSQL_USER: mariadb
+      MYSQL_PASSWORD: mariadb
+    networks:
+      - development
+
+  mysql:
+    container_name: mysql
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: mysql
+    networks:
+      - development
+
+  cassandra:
+    container_name: cassandra
+    image: cassandra:3
+    ports:
+      - 9160:9160
+      - 9042:9042
+      - 9142:9142
+    networks:
+      - development
+
+  jenkins:
+    container_name: jenkins
+    image: jenkins/jenkins:lts-alpine
+    ports:
+      - 8080:8080
+      - 50000:50000
+    networks:
+      - development
+
+networks:
+
+  development:
+    name: development
