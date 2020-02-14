@@ -23,6 +23,11 @@
       <artifactId>example-streaming</artifactId>
       <version>${project.version}</version>
     </dependency>
+    <dependency>
+      <groupId>com.blibli.oss.backend.example</groupId>
+      <artifactId>example-client</artifactId>
+      <version>${project.version}</version>
+    </dependency>
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
