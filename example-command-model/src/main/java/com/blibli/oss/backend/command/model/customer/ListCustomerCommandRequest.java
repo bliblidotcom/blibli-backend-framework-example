@@ -16,10 +16,10 @@ import java.util.Map;
 public class ListCustomerCommandRequest {
 
   @NotNull(message = "NotNull")
-  private Integer size;
+  private Long size;
 
   @NotNull(message = "NotNull")
-  private Integer page;
+  private Long page;
 
   @Builder.Default
   private Map<String, String> orders = new HashMap<>();

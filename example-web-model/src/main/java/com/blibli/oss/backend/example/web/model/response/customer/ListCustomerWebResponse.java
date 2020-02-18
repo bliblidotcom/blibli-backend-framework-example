@@ -13,7 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 public class ListCustomerWebResponse {
 
-  private Integer total;
+  private Long total;
 
   private List<GetCustomerWebResponse> customers;
 }

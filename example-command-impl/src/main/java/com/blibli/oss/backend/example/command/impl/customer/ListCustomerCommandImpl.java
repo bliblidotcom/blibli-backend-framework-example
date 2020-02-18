@@ -34,7 +34,7 @@ public class ListCustomerCommandImpl implements ListCustomerCommand {
   private Mono<ListCustomerWebResponse> fillTotal(ListCustomerWebResponse response) {
     return customerRepository.count()
       .map(aLong -> {
-        response.setTotal(aLong.intValue());
+        response.setTotal(aLong);
         return response;
       });
   }
