@@ -1,6 +1,7 @@
 package com.blibli.oss.backend.example.client;
 
 import com.blibli.oss.backend.apiclient.annotation.ApiClient;
+import com.blibli.oss.backend.example.client.customizer.BinListWebClientCustomizer;
 import com.blibli.oss.backend.example.client.fallback.BinListApiClientFallback;
 import com.blibli.oss.backend.example.client.model.BinResponse;
 import org.springframework.http.MediaType;
@@ -11,7 +12,10 @@ import reactor.core.publisher.Mono;
 
 @ApiClient(
   name = "binListApiClient",
-  fallback = BinListApiClientFallback.class
+  fallback = BinListApiClientFallback.class,
+  webClientCustomizers = {
+    BinListWebClientCustomizer.class
+  }
 )
 public interface BinListApiClient {
 
