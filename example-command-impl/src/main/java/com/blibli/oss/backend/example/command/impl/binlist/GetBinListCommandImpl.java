@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Optional;
 
 @Service
@@ -47,5 +49,15 @@ public class GetBinListCommandImpl implements GetBinListCommand {
     });
 
     return webResponse;
+  }
+
+  @Override
+  public String cacheKey(GetBinListCommandRequest request) {
+    return request.getNumber();
+  }
+
+  @Override
+  public Class<GetBinListWebResponse> responseClass() {
+    return GetBinListWebResponse.class;
   }
 }
