@@ -4,6 +4,7 @@ import com.blibli.oss.backend.command.model.customer.UpdateCustomerCommandReques
 import com.blibli.oss.backend.example.command.customer.UpdateCustomerCommand;
 import com.blibli.oss.backend.example.entity.Customer;
 import com.blibli.oss.backend.example.repository.CustomerRepository;
+import com.blibli.oss.backend.example.streaming.model.CustomerEvent;
 import com.blibli.oss.backend.example.streaming.repository.CustomerKafkaRepository;
 import com.blibli.oss.backend.example.web.model.response.customer.UpdateCustomerWebResponse;
 import com.blibli.oss.backend.reactor.scheduler.SchedulerHelper;
@@ -29,7 +30,19 @@ public class UpdateCustomerCommandImpl implements UpdateCustomerCommand {
     return customerRepository.findById(request.getId())
       .doOnNext(customer -> BeanUtils.copyProperties(request, customer))
       .flatMap(customer -> customerRepository.save(customer))
+      .doOnNext(this::sendToKafka)
       .map(this::convertToWebResponse);
+  }
+
+  private void sendToKafka(Customer customer) {
+    CustomerEvent customerEvent = toCustomerEvent(customer);
+    customerKafkaRepository.sendAndSubscribe(customerEvent, schedulerHelper.of("KAFKA"));
+  }
+
+  private CustomerEvent toCustomerEvent(Customer customer) {
+    CustomerEvent customerEvent = new CustomerEvent();
+    BeanUtils.copyProperties(customer, customerEvent);
+    return customerEvent;
   }
 
   private UpdateCustomerWebResponse convertToWebResponse(Customer customer) {

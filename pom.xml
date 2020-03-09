@@ -46,4 +46,15 @@
     <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
   </properties>
 
+  <repositories>
+    <repository>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>bintray-bliblidotcom-maven</id>
+      <name>bintray</name>
+      <url>https://dl.bintray.com/bliblidotcom/maven</url>
+    </repository>
+  </repositories>
+
 </project>

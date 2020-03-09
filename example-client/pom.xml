@@ -28,6 +28,11 @@
       <groupId>com.blibli.oss</groupId>
       <artifactId>blibli-backend-framework-aggregate-query</artifactId>
     </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <optional>true</optional>
+    </dependency>
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
