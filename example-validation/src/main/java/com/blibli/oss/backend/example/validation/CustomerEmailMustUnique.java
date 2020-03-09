@@ -1,7 +1,6 @@
 package com.blibli.oss.backend.example.validation;
 
 import com.blibli.oss.backend.example.validation.validator.CustomerEmailMustUniqueValidator;
-import com.blibli.oss.backend.example.validation.validator.CustomerMustExistsValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
