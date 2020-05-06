@@ -1,5 +1,6 @@
 package com.blibli.oss.backend.example.streaming.model;
 
+import com.blibli.oss.backend.example.constant.KafkaTopics;
 import com.blibli.oss.backend.example.enums.Gender;
 import com.blibli.oss.backend.kafka.annotation.KafkaKey;
 import com.blibli.oss.backend.kafka.annotation.KafkaTopic;
@@ -12,7 +13,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@KafkaTopic("customer_topic")
+@KafkaTopic(KafkaTopics.CUSTOMER_EVENT)
 public class CustomerEvent {
 
   @KafkaKey
