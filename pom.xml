@@ -30,7 +30,7 @@
   <parent>
     <groupId>com.blibli.oss</groupId>
     <artifactId>blibli-backend-framework</artifactId>
-    <version>0.0.4</version>
+    <version>0.0.5</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
 
@@ -42,7 +42,7 @@
 
   <properties>
     <java.version>1.8</java.version>
-    <blibli-framework.version>0.0.4</blibli-framework.version>
+    <blibli-framework.version>0.0.5</blibli-framework.version>
     <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
   </properties>
 
