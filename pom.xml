@@ -30,7 +30,7 @@
   <parent>
     <groupId>com.blibli.oss</groupId>
     <artifactId>blibli-backend-framework</artifactId>
-    <version>0.0.7</version>
+    <version>0.0.8</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
 
@@ -42,19 +42,9 @@
 
   <properties>
     <java.version>1.8</java.version>
-    <blibli-framework.version>0.0.7</blibli-framework.version>
+    <blibli-framework.version>0.0.8</blibli-framework.version>
     <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
+    <gpg.skip>true</gpg.skip>
   </properties>
-
-  <repositories>
-    <repository>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-      <id>bintray-bliblidotcom-maven</id>
-      <name>bintray</name>
-      <url>https://dl.bintray.com/bliblidotcom/maven</url>
-    </repository>
-  </repositories>
 
 </project>
