@@ -30,7 +30,7 @@
   <parent>
     <groupId>com.blibli.oss</groupId>
     <artifactId>blibli-backend-framework</artifactId>
-    <version>0.0.7</version>
+    <version>2.7.0</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
 
@@ -42,16 +42,123 @@
 
   <properties>
     <java.version>1.8</java.version>
-    <blibli-framework.version>0.0.7</blibli-framework.version>
+    <blibli-framework.version>2.7.0</blibli-framework.version>
     <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
   </properties>
 
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>${spring-cloud.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.blibli.oss</groupId>
+        <artifactId>blibli-backend-framework-aggregate-query</artifactId>
+        <version>${blibli-framework.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.blibli.oss</groupId>
+        <artifactId>blibli-backend-framework-api-client</artifactId>
+        <version>${blibli-framework.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.blibli.oss</groupId>
+        <artifactId>blibli-backend-framework-command</artifactId>
+        <version>${blibli-framework.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.blibli.oss</groupId>
+        <artifactId>blibli-backend-framework-external-api</artifactId>
+        <version>${blibli-framework.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.blibli.oss</groupId>
+        <artifactId>blibli-backend-framework-internal-api</artifactId>
+        <version>${blibli-framework.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.blibli.oss</groupId>
+        <artifactId>blibli-backend-framework-common</artifactId>
+        <version>${blibli-framework.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.blibli.oss</groupId>
+        <artifactId>blibli-backend-framework-kafka</artifactId>
+        <version>${blibli-framework.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.blibli.oss</groupId>
+        <artifactId>blibli-backend-framework-mandatory-parameter</artifactId>
+        <version>${blibli-framework.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.blibli.oss</groupId>
+        <artifactId>blibli-backend-framework-reactor</artifactId>
+        <version>${blibli-framework.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.blibli.oss</groupId>
+        <artifactId>blibli-backend-framework-scheduler-platform</artifactId>
+        <version>${blibli-framework.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.blibli.oss</groupId>
+        <artifactId>blibli-backend-framework-swagger</artifactId>
+        <version>${blibli-framework.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.blibli.oss</groupId>
+        <artifactId>blibli-backend-framework-version</artifactId>
+        <version>${blibli-framework.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.blibli.oss</groupId>
+        <artifactId>blibli-backend-framework-json</artifactId>
+        <version>${blibli-framework.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.blibli.oss</groupId>
+        <artifactId>blibli-backend-framework-validation</artifactId>
+        <version>${blibli-framework.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.blibli.oss</groupId>
+        <artifactId>blibli-backend-framework-sleuth</artifactId>
+        <version>${blibli-framework.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.blibli.oss</groupId>
+        <artifactId>blibli-backend-framework-newrelic</artifactId>
+        <version>${blibli-framework.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
   <repositories>
     <repository>
-      <id>github</id>
-      <url>https://maven.pkg.github.com/bliblidotcom/*</url>
+      <id>libs-releases-local.artifactory.gdn-app.com</id>
+      <name>libs-releases-local.artifactory.gdn-app.com</name>
+      <url>https://artifactory.gdn-app.com/artifactory/libs-releases-local/</url>
+      <layout>default</layout>
+      <releases>
+      </releases>
       <snapshots>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>libs-snapshots-local.artifactory.gdn-app.com</id>
+      <name>libs-snapshots-local.artifactory.gdn-app.com</name>
+      <url>https://artifactory.gdn-app.com/artifactory/libs-snapshots-local/</url>
+      <layout>default</layout>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
       </snapshots>
     </repository>
   </repositories>
