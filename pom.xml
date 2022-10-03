@@ -44,6 +44,7 @@
     <java.version>1.8</java.version>
     <blibli-framework.version>2.7.0</blibli-framework.version>
     <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
+    <gpg.skip>true</gpg.skip>
   </properties>
 
   <dependencyManagement>
